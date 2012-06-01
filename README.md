@@ -11,7 +11,7 @@ TODO
  * Create Room
  * Route directed message
   * @all
-  * @<user>
+  * @user
  * Look up attachments
   * Message contains URI to download attachment
 
