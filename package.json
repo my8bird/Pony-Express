@@ -1,0 +1,22 @@
+{
+  "name": "Pony_Express",
+  "author": "Nathan Landis <my8bird@gmail.com>",
+  "version": "0.0.1",
+
+  "scripts": {
+  },
+
+  "dependencies": {
+    "iced-coffee-script": "1.3.x",
+    "express"           : "2.5.x",
+    "jade"              : "0.26.x",
+    "mongodb"           : "1.0.x"
+  },
+  "devDependencies": {
+    "mocha" : "1.1.x",
+    "chai"  : "1.0.x",
+    "should": "0.6.x"
+  },
+  "engine": "node >= 0.6.18"
+}
+
