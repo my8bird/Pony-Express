@@ -7,11 +7,11 @@ client = null
 # flag which marks if the databse is ready
 connected = false
 
-connect = (host, port, cb) ->
+connect = (name, host, port, cb) ->
    if connected
       return cb('Already Connected')
 
-   client = new Db('test', new Server(host, port, {}))
+   client = new Db(name, new Server(host, port, {strict: true}))
    await client.open defer(err, p_client)
 
    if err
@@ -35,7 +35,7 @@ disconnect = () ->
 # Holds references to the different collections so that
 # we can work with them
 _collections = {}
-collection = (name, cb) ->
+getCollection = (name, cb) ->
    '''
    Provides simplified interface for gaining access to a collection.
    '''
@@ -77,9 +77,25 @@ collection = (name, cb) ->
       cb(null, collection)
 
 
+addCollection = (name, cb) ->
+   console.log('adfs')
+
+removeCollection = (name, cb) ->
+   await getCollection name, defer(err, collection)
+   if err then return cb(err)
+
+   await collection.drop {}, defer(err, collection)
+   if err then return cb(err)
+
+   cb(null)
+
+
 module.exports =
    connected:  connected
    connect:    connect
    disconnect: disconnect
 
-   collection: collection
+   collection:
+     'get'   : getCollection
+     'add'   : addCollection
+     'remove': removeCollection
