@@ -2,9 +2,9 @@
 {loopUntil}            = require './util'
 
 
-# connection to database
+# Connection to database
 client = null
-# flag which marks if the databse is ready
+# Flag which marks if the databse is ready
 connected = false
 
 connect = (name, host, port, cb) ->

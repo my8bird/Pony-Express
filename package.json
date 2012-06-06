@@ -4,6 +4,7 @@
   "version": "0.0.1",
 
   "scripts": {
+     "test": "./node_modules/.bin/icake test"
   },
 
   "dependencies": {
