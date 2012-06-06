@@ -25,3 +25,4 @@ task 'test', 'run all tests', (options) ->
   await run runner, args, defer(status)
   if status > 0
      process.exit(status)
+

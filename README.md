@@ -1,3 +1,6 @@
+[![Build Status](https://secure.travis-ci.org/my8bird/node-leveldb.png)](http://travis-ci.org/my8bird/Pony-Express)
+
+
 Pony-Express
 ============
 
