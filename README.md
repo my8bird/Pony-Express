@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/my8bird/Pony-Express.png)](http://travis-ci.org/my8bird/Pony-Express)
+[![Build Status](https://secure.travis-ci.org/my8bird/Pony-Express.png?branch=master)](http://travis-ci.org/my8bird/Pony-Express)
 
 
 Pony-Express
