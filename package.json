@@ -3,6 +3,11 @@
   "author": "Nathan Landis <my8bird@gmail.com>",
   "version": "0.0.1",
 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/my8bird/Pony-Express.git"
+  },
+
   "scripts": {
      "test": "./node_modules/.bin/icake test"
   },
