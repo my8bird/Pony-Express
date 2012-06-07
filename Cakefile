@@ -12,17 +12,22 @@ run = (cmd, args, cb) ->
    proc.on 'exit', (code) ->
       cb(code)
 
+option '-w', '--watch', 'Watch files and run tests'
 
 task 'test', 'run all tests', (options) ->
   # Build up command
   runner = "./node_modules/.bin/mocha"
   args   = ["--compilers", "coffee:iced-coffee-script",
-            "--colors",
-            "--recursive",
-            "test/"]
+           "--require", "should",
+           "--reporter", "spec",
+           "--colors",
+           "--recursive",
+           "test/"]
+
+  if options.watch
+    args.push('--watch')
 
   # Run tests
   await run runner, args, defer(status)
   if status > 0
      process.exit(status)
-
