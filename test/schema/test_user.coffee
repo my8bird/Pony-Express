@@ -2,14 +2,17 @@ mongoose = require('mongoose')
 should   = require('should')
 
 # Adds Model to mongoose
-# XXX Look into better way to do this
-require('../src/rest/user')
+require('../../src/schema/user')
 
 mongoose.connect('mongodb://localhost:27017/pony-test')
 
 User = mongoose.model('User')
 
 describe 'User Data Model', () ->
+
+   beforeEach (done) ->
+      # XXX clear all tables from database
+      done()
 
    it 'should allow saving to the database', (done) ->
       # Create an User
